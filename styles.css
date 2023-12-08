@@ -1,0 +1,160 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 8px;
+  min-height: 500px;
+}
+
+.form-container,
+.list-container {
+  flex: 1;
+  padding: 20px;
+}
+
+
+.form-container {
+  background-color: #4caf50;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-container {
+  background-color: #fff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow-y: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center; 
+}
+
+.completed-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox-container input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: aqua;
+}
+
+.checkbox-custom {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #4caf50;
+  border-radius: 3px;
+  margin-right: 5px; 
+  cursor: pointer;
+}
+
+.checkbox-custom::after {
+  content: '\2713'; 
+  font-size: 16px;
+  color: #4caf50;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-container input:checked + .checkbox-custom::after {
+  opacity: 1;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #fff;
+  color: #4caf50;
+  cursor: pointer;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+button:hover {
+  background-color: orange;
+  color: #fff;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.list-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.list-item.completed {
+  color: #888;
+}
+
+.list-item.completed .tick {
+  text-decoration: none;
+}
+
+.list-item .tick {
+  color: #4caf50;
+  font-size: 20px;
+  margin-left: 5px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Form and List</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="todoForm">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required />
+                </div>
+                <div class="completed-container">
+                    <label for="completed">Completed:</label>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="completed" class="checkbox-custom">
+                        <div class="checkbox-custom"></div>
+                    </div>
+                </div>
+
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div class="list-container">
+            <div class="loader-container">
+              <div id="loader" class="loader"></div>
+            </div>
+            <div id="todoList"></div>
+          </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
